@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/neha03sharma/born-accelerator-build.git"
+    "url": "git+https://github.com/bogbara-maker/born-build-n18.git"
   },
   "keywords": [
     "build",
@@ -17,9 +17,9 @@
   "author": "SFCC Team @borngroup",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/neha03sharma/born-accelerator-build/issues"
+    "url": "https://github.com/bogara-maker/born-build-n18/issues"
   },
-  "homepage": "https://github.com/neha03sharma/born-accelerator-build#readme",
+  "homepage": "https://github.com/bogbara-maker/born-build-n18#readme",
   "dependencies": {
     "@babel/core": "^7.12.10",
     "@babel/eslint-parser": "^7.12.1",
