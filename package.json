@@ -1,5 +1,5 @@
 {
-  "name": "@borngroup-accelerator/born-build",
+  "name": "@born-build-n18/born-build",
   "version": "1.0.4",
   "description": "Born tool for builds that run on node>= 18",
   "main": "src/index.js",
