@@ -150,7 +150,7 @@ function _setConfig(configList, options, currentCartridge) {
         }
     }
 
-    if (buildHelpers.getFlagValue('styles')) {
+    if (buildHelpers.getFlagValue('css')) {
         let currentConfig = _getStylesConfig(currentCartridge, options);
 
         if (currentConfig) {
@@ -169,7 +169,7 @@ function _updateConfig(configList, customConfigList, mergeStrategy = {}) {
         customConfigList.forEach(function(currentCustomConfig) {
             if (curentConfig.name.indexOf(`${currentCustomConfig.name}`) !== -1) {
                 //See https://github.com/survivejs/webpack-merge#merging-with-strategies
-                configList[index] = webpackMerge.merge(curentConfig, currentCustomConfig);
+                configList[index] = webpackMerge.smartStrategy(mergeStrategy)(curentConfig, currentCustomConfig);
             }
         });
     });
@@ -180,7 +180,7 @@ function _updateConfig(configList, customConfigList, mergeStrategy = {}) {
  * @return {[Array]}     [description]
  */
 function initConfig(customConfigList, mergeStrategy) {
-    let scope = buildHelpers.getFlagValue('styles') ? 'styles' : 'js',
+    let scope = buildHelpers.getFlagValue('css') ? 'styles' : 'js',
         cartridgeList = buildHelpers.getCartridgeBuildList(scope),
         options = {
             mainFiles: buildHelpers.getConfigValue('mainFiles', 'main.js', scope).split(/(?:,| )+/),
@@ -189,10 +189,13 @@ function initConfig(customConfigList, mergeStrategy) {
             revolverPaths: buildHelpers.getRevolverPaths(scope)
         },
         configList = [];
+
     cartridgeList.forEach(_setConfig.bind(this, configList, options));
+
     if (customConfigList) {
         _updateConfig(configList, customConfigList, mergeStrategy);
     }
+
     return configList;
 }
 
