@@ -1,5 +1,5 @@
 {
-  "name": "born-buid-n18",
+  "name": "born-build-n18",
   "version": "1.0.5",
   "description": "Born tool for builds that run on node 18",
   "main": "src/index.js",
@@ -59,4 +59,3 @@
     "webpack-merge": "^5.10.0"
   }
 }
-

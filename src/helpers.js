@@ -12,7 +12,7 @@ const DEFAULTS = {
             outputPath: 'cartridges/{cartridge}/cartridge/static/default/js'
         },
         styles: {
-            inputPath: 'cartridges/{cartridge}/cartridge/scss/**/*.scss',
+            inputPath: 'cartridges/{cartridge}/cartridge/client/default/scss/**/*.scss',
             outputPath: 'cartridges/{cartridge}/cartridge/static'
         }
     };
